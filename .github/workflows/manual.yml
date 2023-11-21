@@ -25,6 +25,7 @@ jobs:
     environment: ${{ inputs.environment }}
     steps:
       - run: which yarn
+      - run: rm -rf /usr/local/bin/yarn
       - run: yarn -v
       - run: |
           echo "Log level: $LEVEL"
