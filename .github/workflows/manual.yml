@@ -24,9 +24,17 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment }}
     steps:
-      - run: yarn -v
       - run: rm -rf $(which yarn)
-      - run: yarn -v
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+          cache: 'yarn'
+
+      - run: corepack enable
       - run: |
           echo "Log level: $LEVEL"
           echo "Tags: $TAGS"
