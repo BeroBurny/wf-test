@@ -24,6 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment }}
     steps:
+      - run: yarn -v
       - run: |
           echo "Log level: $LEVEL"
           echo "Tags: $TAGS"
