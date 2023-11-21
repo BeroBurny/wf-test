@@ -24,6 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment }}
     steps:
+      - run: sudo apt-get remove yarn && sudo apt-get purge yarn
       - run: yarn -v
       - run: |
           echo "Log level: $LEVEL"
