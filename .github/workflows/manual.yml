@@ -39,7 +39,7 @@ jobs:
           echo "Tags: $TAGS"
           echo "Environment: $ENVIRONMENT"
           echo "Variable: $VARIABLE"
-          echo "Repository Variable: SHARED"
+          echo "Repository Variable: $SHARED"
         env:
           LEVEL: ${{ inputs.logLevel }}
           TAGS: ${{ inputs.tags }}
